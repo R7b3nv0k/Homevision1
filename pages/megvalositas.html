@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Vision | Megvalósítás</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         (function () {
             var theme = localStorage.getItem('homevision_theme');
@@ -19,18 +21,10 @@
 
     <nav class="navbar">
         <!-- BEÉPÍTETT LOGÓ -->
-        <div class="logo" style="display: flex; align-items: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40"
-                style="margin-right: 10px;">
-                <rect x="20" y="30" width="25" height="50" fill="none" stroke="currentColor" stroke-width="6"
-                    stroke-linejoin="round" />
-                <rect x="45" y="50" width="35" height="30" fill="none" stroke="currentColor" stroke-width="6"
-                    stroke-linejoin="round" />
-                <line x1="32.5" y1="45" x2="32.5" y2="65" stroke="currentColor" stroke-width="6"
-                    stroke-linecap="round" />
-            </svg>
-            <span>Home Vision</span>
-        </div>
+        <a href="../index.html" class="logo" style="display: flex; align-items: center;" aria-label="HomeVision Főoldal">
+            <img src="../images/logo.png" alt="HomeVision" class="logo-img logo-light">
+            <img src="../images/logo-dark.png" alt="HomeVision" class="logo-img logo-dark">
+        </a>
 
         <ul class="nav-links">
             <li><a href="../index.html" data-i18n="home">Főoldal</a></li>
@@ -50,7 +44,7 @@
     <main class="page-container">
         <!-- Fejléc / Hero szakasz -->
         <div style="text-align: center; max-width: 860px; margin: 0 auto 3rem;">
-            <span class="tag" style="background: rgba(37, 99, 235, 0.1); color: var(--primary-color); border-color: rgba(37, 99, 235, 0.25); font-weight: 600; margin-bottom: 1rem;" data-i18n="impl_badge">
+            <span class="tag" style="background: rgba(255, 84, 77, 0.1); color: var(--primary-color); border-color: rgba(255, 84, 77, 0.25); font-weight: 600; margin-bottom: 1rem;" data-i18n="impl_badge">
                 Prémium Kivitelezés & Munkapartner
             </span>
             <h1 class="page-title" style="margin-bottom: 1rem;" data-i18n="impl_title">A Tervektől a Kulcsátadásig</h1>
@@ -63,7 +57,7 @@
         <div class="contact-wrapper" style="margin-bottom: 4rem; position: relative; overflow: hidden; border: 1px solid var(--border-color); background: var(--card-bg); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border-color);">
                 <div style="display: flex; align-items: center; gap: 14px;">
-                    <div style="width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-color), #60a5fa); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.6rem; font-weight: 700; box-shadow: 0 4px 14px var(--primary-glow);">
+                    <div style="width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-color), #ff8a85); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.6rem; font-weight: 700; box-shadow: 0 4px 14px var(--primary-glow);">
                         ✦
                     </div>
                     <div>
@@ -176,7 +170,7 @@
         </div>
 
         <!-- CTA Blokk -->
-        <div class="contact-wrapper" style="text-align: center; max-width: 800px; margin: 0 auto 3rem; background: linear-gradient(135deg, var(--card-bg), rgba(37, 99, 235, 0.05)); border: 1px solid var(--border-color);">
+        <div class="contact-wrapper" style="text-align: center; max-width: 800px; margin: 0 auto 3rem; background: linear-gradient(135deg, var(--card-bg), rgba(255, 84, 77, 0.05)); border: 1px solid var(--border-color);">
             <h2 style="font-size: 1.6rem; margin-bottom: 0.8rem;" data-i18n="impl_cta_title">Építsd fel velünk álmaid otthonát!</h2>
             <p style="font-size: 1.05rem; line-height: 1.7; opacity: 0.85; margin-bottom: 1.8rem;" data-i18n="impl_cta_desc">
                 Vedd fel a kapcsolatot csapatunkkal és a Térmágus Kft. szakembereivel egy kötetlen, díjmentes konzultációért!
@@ -194,18 +188,10 @@
             <div class="footer-grid">
                 <!-- 1. Cég bemutatkozás & Logó -->
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32"
-                            style="margin-right: 8px;">
-                            <rect x="20" y="30" width="25" height="50" fill="none" stroke="currentColor" stroke-width="6"
-                                stroke-linejoin="round" />
-                            <rect x="45" y="50" width="35" height="30" fill="none" stroke="currentColor" stroke-width="6"
-                                stroke-linejoin="round" />
-                            <line x1="32.5" y1="45" x2="32.5" y2="65" stroke="currentColor" stroke-width="6"
-                                stroke-linecap="round" />
-                        </svg>
-                        <span>Home Vision Kft.</span>
-                    </div>
+                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;" aria-label="HomeVision Főoldal">
+                        <img src="../images/logo.png" alt="HomeVision" class="logo-img logo-light">
+                        <img src="../images/logo-dark.png" alt="HomeVision" class="logo-img logo-dark">
+                    </a>
                     <p class="footer-desc" data-i18n="footer_desc">
                         Prémium minőségű, azonnal megvásárolható és építhető modern családi háztervek tervezőirodája.
                     </p>

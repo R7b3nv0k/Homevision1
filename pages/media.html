@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Vision | Média</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         (function () {
             var theme = localStorage.getItem('homevision_theme');
@@ -19,21 +21,10 @@
 
     <nav class="navbar">
         <!-- ITT VAN AZ ÚJ BEÉPÍTETT LOGÓ -->
-        <div class="logo" style="display: flex; align-items: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40"
-                style="margin-right: 10px;">
-                <!-- Bal oldali magasabb blokk -->
-                <rect x="20" y="30" width="25" height="50" fill="none" stroke="currentColor" stroke-width="6"
-                    stroke-linejoin="round" />
-                <!-- Jobb oldali szélesebb, laposabb blokk -->
-                <rect x="45" y="50" width="35" height="30" fill="none" stroke="currentColor" stroke-width="6"
-                    stroke-linejoin="round" />
-                <!-- Ablak -->
-                <line x1="32.5" y1="45" x2="32.5" y2="65" stroke="currentColor" stroke-width="6"
-                    stroke-linecap="round" />
-            </svg>
-            <span>Home Vision</span>
-        </div>
+        <a href="../index.html" class="logo" style="display: flex; align-items: center;" aria-label="HomeVision Főoldal">
+            <img src="../images/logo.png" alt="HomeVision" class="logo-img logo-light">
+            <img src="../images/logo-dark.png" alt="HomeVision" class="logo-img logo-dark">
+        </a>
         <!-- LOGÓ VÉGE -->
         <ul class="nav-links">
             <li><a href="../index.html" data-i18n="home">Főoldal</a></li>
@@ -75,18 +66,10 @@
             <div class="footer-grid">
                 <!-- 1. Cég bemutatkozás & Logó -->
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32"
-                            style="margin-right: 8px;">
-                            <rect x="20" y="30" width="25" height="50" fill="none" stroke="currentColor" stroke-width="6"
-                                stroke-linejoin="round" />
-                            <rect x="45" y="50" width="35" height="30" fill="none" stroke="currentColor" stroke-width="6"
-                                stroke-linejoin="round" />
-                            <line x1="32.5" y1="45" x2="32.5" y2="65" stroke="currentColor" stroke-width="6"
-                                stroke-linecap="round" />
-                        </svg>
-                        <span>Home Vision Kft.</span>
-                    </div>
+                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;" aria-label="HomeVision Főoldal">
+                        <img src="../images/logo.png" alt="HomeVision" class="logo-img logo-light">
+                        <img src="../images/logo-dark.png" alt="HomeVision" class="logo-img logo-dark">
+                    </a>
                     <p class="footer-desc" data-i18n="footer_desc">
                         Prémium minőségű, azonnal megvásárolható és építhető modern családi háztervek tervezőirodája.
                     </p>
