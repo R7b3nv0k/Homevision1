@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Vision | Nordic Family</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var theme = localStorage.getItem('homevision_theme');
+            if (theme) document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <!-- Three.js a 3D modellhez -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigáció -->
+    <nav class="navbar">
+        <div class="logo" style="display: flex; align-items: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40"
+                style="margin-right: 10px;">
+                <rect x="20" y="30" width="25" height="50" fill="none" stroke="currentColor" stroke-width="6"
+                    stroke-linejoin="round" />
+                <rect x="45" y="50" width="35" height="30" fill="none" stroke="currentColor" stroke-width="6"
+                    stroke-linejoin="round" />
+                <line x1="32.5" y1="45" x2="32.5" y2="65" stroke="currentColor" stroke-width="6"
+                    stroke-linecap="round" />
+            </svg>
+            <span>Home Vision</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html" data-i18n="home">Főoldal</a></li>
+            <li><a href="tervek.html" class="active" data-i18n="plans">Tervek</a></li>
+            <li><a href="megvalositas.html" data-i18n="implementation">Megvalósítás</a></li>
+            <li><a href="media.html" data-i18n="media">Média</a></li>
+            <li><a href="rolunk.html" data-i18n="about">Rólunk</a></li>
+            <li><a href="kapcsolat.html" data-i18n="contact">Kapcsolat</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="themeToggle" class="btn-icon">🌓</button>
+            <button id="langToggle" class="btn-text">EN</button>
+            <button id="loginBtn" class="btn-primary" data-i18n="login">Bejelentkezés</button>
+        </div>
+    </nav>
+
+    <!-- Terv részletek szekció -->
+    <main class="page-container">
+        <!-- Vissza gomb -->
+        <a href="tervek.html"
+            style="color: var(--primary-color); text-decoration: none; margin-bottom: 20px; display: inline-block;">&larr;
+            <span data-i18n="back_btn">Vissza a tervekhez</span></a>
+
+        <div class="plan-detail-grid">
+
+            <!-- Bal oldal: 3D Modell -->
+            <div class="model-section">
+                <div id="3d-container" class="model-box">
+                    <!-- Ide generálja a JS a 3D-t -->
+                </div>
+                <p style="text-align: center; margin-top: 10px; opacity: 0.7; font-size: 0.9rem;"
+                    data-i18n="rotate_hint">
+                    (Kattints és húzd a modell forgatásához, görgővel nagyíthatsz)
+                </p>
+            </div>
+
+            <!-- Jobb oldal: Adatok és Vásárlás -->
+            <div class="plan-info-section">
+                <h1 class="page-title" style="text-align: left; margin-bottom: 10px;">Nordic Family</h1>
+
+                <div class="tags">
+                    <span class="tag" data-i18n="sqm_150">150 m²</span>
+                    <span class="tag" data-i18n="rooms_5">5 szoba</span>
+                    <span class="tag">Dupla garázs</span>
+                </div>
+
+                <!-- Ár rész -->
+                <div class="price-box">
+                    <p class="price-label" data-i18n="price_label">Teljes tervdokumentáció ára:</p>
+                    <h2 class="price-amount">350.000 Ft <span class="brutto" data-i18n="brutto">(bruttó)</span></h2>
+                </div>
+
+                <!-- Vásárlás gomb (behozza a logint) -->
+                <button class="btn-large" id="buyPlanBtn" style="width: 100%; margin-top: 0;" data-i18n="buy_btn">Terv
+                    Vásárlása</button>
+            </div>
+
+        </div>
+
+        <!-- Alsó doboz: Leírás -->
+        <div class="description-box">
+            <h3 data-i18n="desc_title">A terv leírása</h3>
+            <p data-i18n="nordic_desc">A Nordic Family egy modern, skandináv stílusjegyeket magán viselő, egyszintes
+                családi ház. Hatalmas üvegfelületeinek köszönhetően a nappali egész nap fényárban úszik. Az alaprajz
+                különválasztja a szülői hálót a gyerekszobáktól, így biztosítva a maximális intimitást. A terv
+                tartalmazza az építészeti, gépészeti és villamossági tervdokumentációt is.</p>
+        </div>
+
+    </main>
+
+    <!-- Lábléc (Footer) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- 1. Cég bemutatkozás & Logó -->
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32"
+                            style="margin-right: 8px;">
+                            <rect x="20" y="30" width="25" height="50" fill="none" stroke="currentColor" stroke-width="6"
+                                stroke-linejoin="round" />
+                            <rect x="45" y="50" width="35" height="30" fill="none" stroke="currentColor" stroke-width="6"
+                                stroke-linejoin="round" />
+                            <line x1="32.5" y1="45" x2="32.5" y2="65" stroke="currentColor" stroke-width="6"
+                                stroke-linecap="round" />
+                        </svg>
+                        <span>Home Vision Kft.</span>
+                    </div>
+                    <p class="footer-desc" data-i18n="footer_desc">
+                        Prémium minőségű, azonnal megvásárolható és építhető modern családi háztervek tervezőirodája.
+                    </p>
+                </div>
+
+                <!-- 2. Hivatalos Cégadatok -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer_company_info">Hivatalos Cégadatok</h4>
+                    <ul class="footer-info-list">
+                        <li><strong>Cégnév:</strong> Home Vision Kft.</li>
+                        <li><strong data-i18n="footer_hq">Székhely:</strong> 1054 Budapest, Szabadság tér 7.</li>
+                        <li><strong data-i18n="footer_tax">Adószám:</strong> 28741923-2-41</li>
+                        <li><strong data-i18n="footer_reg">Cégjegyzékszám:</strong> 01-09-389142</li>
+                        <li><strong data-i18n="footer_bank">Bankszámla:</strong> 11705008-20451829 (OTP)</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Gyorslinkek -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer_quicklinks">Gyorslinkek</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" data-i18n="home">Főoldal</a></li>
+                        <li><a href="tervek.html" data-i18n="plans">Tervek</a></li>
+                        <li><a href="megvalositas.html" data-i18n="implementation">Megvalósítás</a></li>
+                        <li><a href="media.html" data-i18n="media">Média</a></li>
+                        <li><a href="rolunk.html" data-i18n="about">Rólunk</a></li>
+                        <li><a href="kapcsolat.html" data-i18n="contact">Kapcsolat</a></li>
+                    </ul>
+                </div>
+
+                <!-- 4. Kapcsolat & Ügyfélszolgálat -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer_contact">Elérhetőségek</h4>
+                    <ul class="footer-info-list">
+                        <li>📞 <a href="tel:+3612345678">+36 (1) 234-5678</a></li>
+                        <li>📱 <a href="tel:+36309876543">+36 (30) 987-6543</a></li>
+                        <li>✉️ <a href="mailto:info@homevision.hu">info@homevision.hu</a></li>
+                        <li>🕒 <span data-i18n="footer_hours">H-P: 09:00 - 17:00</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">© 2026 Home Vision Kft. Minden jog fenntartva.</p>
+                <p class="footer-credit" style="font-size: 0.78rem; opacity: 0.55; margin-top: 6px;" data-i18n="footer_credit">Web oldalt készítette:Katona Ruben(Térmágus KFT.)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="authModal" class="modal">
+        <!-- Ugyanaz, mint a többi oldalon -->
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle" data-i18n="login_title">Bejelentkezés</h2>
+            <form id="authForm">
+                <input type="email" placeholder="Email cím" required data-i18n-placeholder="email">
+                <input type="password" placeholder="Jelszó" required data-i18n-placeholder="password">
+                <button type="submit" class="btn-primary auth-submit" data-i18n="login_submit">Belépés</button>
+            </form>
+            <p class="switch-auth">
+                <span data-i18n="no_account">Nincs még fiókod?</span>
+                <a href="#" id="switchMode" data-i18n="register_link">Regisztrálj!</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+
+    <!-- EGYEDI 3D MODELL SCRIPT (Three.js) -->
+    <script>
+        // Ez a kód egy nagyon leegyszerűsített modern házat generál be
+        const container = document.getElementById('3d-container');
+
+        // 1. Színtér (átlátszó háttérrel, hogy jó legyen a sötét módhoz is)
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        // 2. Forgatás (OrbitControls)
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.autoRotate = true; // Lassan forog magától
+        controls.autoRotateSpeed = 1.0;
+
+        // 3. A ház geometriája
+        const houseGroup = new THREE.Group();
+
+        // Alap / Falak (fehér)
+        const baseGeo = new THREE.BoxGeometry(4, 2.5, 3);
+        const baseMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.8 });
+        const base = new THREE.Mesh(baseGeo, baseMat);
+        base.position.y = 1.25;
+        houseGroup.add(base);
+
+        // Kisebb kiugró rész (pl. garázs vagy bejárat - szürke)
+        const garageGeo = new THREE.BoxGeometry(2, 2, 2);
+        const garageMat = new THREE.MeshStandardMaterial({ color: 0x888888 });
+        const garage = new THREE.Mesh(garageGeo, garageMat);
+        garage.position.set(-2, 1, 1);
+        houseGroup.add(garage);
+
+        // Skandináv stílusú sötét lapostető a főrészen
+        const roofGeo = new THREE.BoxGeometry(4.2, 0.2, 3.2);
+        const roofMat = new THREE.MeshStandardMaterial({ color: 0x222222 });
+        const roof = new THREE.Mesh(roofGeo, roofMat);
+        roof.position.y = 2.6;
+        houseGroup.add(roof);
+
+        scene.add(houseGroup);
+
+        // 4. Fények
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 10, 7);
+        scene.add(directionalLight);
+
+        // 5. Kamera pozíció
+        camera.position.set(4, 4, 6);
+
+        // 6. Animációs ciklus
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // 7. Ablak átméretezés kezelése
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+    </script>
+</body>
+
+</html>
